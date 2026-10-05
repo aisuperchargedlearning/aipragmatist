@@ -1,0 +1,230 @@
+/* ---------- Cards ---------- */
+.card {
+  margin-top: 18px;
+  padding: 18px 26px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.card-description {
+  margin: -4px 0 16px;
+  max-width: 760px;
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+/* ---------- Field grids ---------- */
+.grid-2 {
+  display: grid;
+  grid-template-columns: minmax(0, 0.935fr) minmax(0, 1fr);
+  gap: 11px 28px;
+}
+
+.grid-address {
+  display: grid;
+  grid-template-columns: minmax(0, 413fr) minmax(0, 292fr) minmax(0, 257fr);
+  gap: 11px 26px;
+  margin-top: 11px;
+}
+
+.span-all {
+  grid-column: 1 / -1;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.conditional-block {
+  margin-top: 20px;
+}
+
+/* ---------- Fields ---------- */
+.field,
+.section-fields,
+.invite-fields,
+.choice-group,
+.date-field {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 5px;
+  padding: 0;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.required-mark {
+  color: var(--danger);
+}
+
+.field-hint {
+  margin: -2px 0 8px;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.input {
+  display: block;
+  width: 100%;
+  height: 42px;
+  padding: 0 16px;
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  font-size: 17px;
+  color: var(--text);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus {
+  outline: 2px solid transparent;
+  border-color: var(--accent);
+  box-shadow: var(--focus);
+}
+
+.input[aria-invalid='true'] {
+  border-color: var(--danger);
+}
+
+.input:disabled {
+  background: var(--disabled-bg);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.select {
+  padding-right: 44px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2314213d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 20px;
+  cursor: pointer;
+}
+
+.select:disabled {
+  background-color: var(--disabled-bg);
+}
+
+.textarea {
+  height: auto;
+  min-height: 96px;
+  padding: 10px 16px;
+  line-height: 1.45;
+  resize: vertical;
+}
+
+.char-count {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.field-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 15px;
+  color: var(--danger);
+}
+
+.field-error svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* ---------- Date dropdowns ---------- */
+.date-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 121fr) minmax(0, 191fr) minmax(0, 124fr);
+  gap: 20px;
+}
+
+/* ---------- Radio buttons and checkboxes ---------- */
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.choices--inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+}
+
+.choices--grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 4px 20px;
+}
+
+.choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.choice input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.choice-group[aria-invalid='true'] .choice input {
+  outline: 2px solid var(--danger);
+  outline-offset: 1px;
+}
+
+@media (max-width: 799px) {
+  .card {
+    padding: 18px 16px 20px;
+  }
+
+  .card-title {
+    font-size: 21px;
+  }
+
+  .grid-2,
+  .grid-address {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .date-grid {
+    gap: 10px;
+  }
+}
