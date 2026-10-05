@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  optimizeDeps: {
-    exclude: ['lucide-react'],
+  build: {
+    // heic2any (HEIC photo conversion) is large but lazy-loaded only when a HEIC file is uploaded.
+    chunkSizeWarningLimit: 1600,
   },
 });
